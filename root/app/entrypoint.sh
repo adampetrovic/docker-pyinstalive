@@ -12,13 +12,14 @@ DOWNLOAD_BASEDIR=$(awk -F "=" '/download_path/ {print $2}' ${CONFIG_FILE} | sed 
 
 while true
 do
-    DATE=$(date +'%d-%m-%Y')
+    DATE=$(date +'%Y-%m-%d')
     DOWNLOAD_DIR="${DOWNLOAD_BASEDIR}/${DATE}"
 
     if [ ! -d "${DOWNLOAD_DIR}" ]; then
         echo "Can't find ${DOWNLOAD_DIR}. Creating."
         mkdir -p ${DOWNLOAD_DIR}
     fi
+    echo "Using DOWNLOAD_DIR=${DOWNLOAD_DIR}"
     /usr/local/bin/pyinstalive -df -cp /config/pyinstalive.ini -dp ${DOWNLOAD_DIR}
 	sleep ${SLEEP_DURATION}
 done

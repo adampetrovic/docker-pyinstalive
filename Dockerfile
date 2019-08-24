@@ -3,7 +3,7 @@ FROM lsiobase/ubuntu:bionic
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-ARG PYINSTALIVE_RELEASE
+ARG PYINSTALIVE_RELEASE=3.1.8
 LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="adam@petrovic.com.au"
 
