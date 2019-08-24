@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+
+cd /config || exit
+
+exec \
+	s6-setuidgid abc /bin/bash /app/entrypoint.sh

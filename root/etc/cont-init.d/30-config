@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+
+# Display variables for troubleshooting
+if [ ! -f "/config/pyinstalive.ini" ]; then
+  echo -e "Couldn't find a configuration file named pyinstalive.ini, so one has been created."
+  echo -e "Please edit /config/pyinstalive.ini and restart the container."
+  cp /defaults/pyinstalive.ini /config/pyinstalive.ini
+  sleep infinity
+fi
