@@ -26,12 +26,12 @@ RUN \
  mkdir -p \
 	/app/pyinstalive && \
  if [ -z ${PYINSTALIVE_RELEASE+x} ]; then \
-	PYINSTALIVE_RELEASE=$(curl -sX GET "https://api.github.com/repos/notcammy/PyInstaLive/releases/latest" \
+	PYINSTALIVE_RELEASE=$(curl -sX GET "https://api.github.com/repos/dvingerh/PyInstaLive/releases/latest" \
 	| jq -r .tag_name); \
  fi && \
  curl -o \
  /tmp/pyinstalive.tar.gz -L \
-	"https://github.com/notcammy/PyInstaLive/archive/${PYINSTALIVE_RELEASE}.tar.gz" && \
+	"https://github.com/dvingerh/PyInstaLive/archive/${PYINSTALIVE_RELEASE}.tar.gz" && \
  tar xf \
  /tmp/pyinstalive.tar.gz -C \
 	/app/pyinstalive --strip-components=1 && \
